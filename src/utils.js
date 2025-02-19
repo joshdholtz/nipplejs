@@ -79,7 +79,10 @@ export const trigger = (el, type, data) => {
 };
 
 export const prepareEvent = (evt) => {
-    evt.preventDefault();
+    // Only prevent default if the target is a joystick element
+    if (evt.target.className === 'front' || evt.target.className === 'back') {
+        evt.preventDefault();
+    }
     return evt.type.match(/^touch/) ? evt.changedTouches : evt;
 };
 
