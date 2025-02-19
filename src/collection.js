@@ -107,7 +107,7 @@ Collection.prototype.begin = function () {
 
     // We place our static nipple
     // if needed.
-    if (opts.mode === 'static') {
+    if (opts.mode === 'static' || opts.mode === 'semi') {
         var nipple = self.createNipple(
             opts.position,
             self.manager.getIdentifier()
